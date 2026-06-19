@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Image Placeholders</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFF8F0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #C0392B;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card .name {
+            font-weight: bold;
+            margin: 10px 0 5px;
+            color: #2D2D2D;
+        }
+        .card .path {
+            font-size: 11px;
+            color: #888;
+            word-break: break-all;
+            background: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .category-title {
+            grid-column: 1 / -1;
+            background: #C0392B;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .instructions {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .instructions code {
+            background: #333;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🍽️ Restaurant Image Placeholders</h1>
+    <p style="text-align: center; color: #666;">Right-click any image and save it to the corresponding folder</p>
+
+    <div class="instructions">
+        <h3>📁 Folder Structure to Create:</h3>
+        <code>public/images/</code>
+        <ul>
+            <li>📁 <code>starters/</code> - 4 images</li>
+            <li>📁 <code>main-course/</code> - 4 images</li>
+            <li>📁 <code>desserts/</code> - 4 images</li>
+            <li>📁 <code>drinks/</code> - 4 images</li>
+        </ul>
+        <p><strong>💡 Tip:</strong> Create these folders in <code>public/images/</code> and save the images with the exact names shown below.</p>
+    </div>
+
+    <div class="grid" id="imageGrid"></div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f5e9; border-radius: 12px;">
+        <h3>✅ Quick Setup Instructions:</h3>
+        <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>Create folders: <code>starters</code>, <code>main-course</code>, <code>desserts</code>, <code>drinks</code> inside <code>public/images/</code></li>
+            <li>Right-click each image below and select "Save Image As"</li>
+            <li>Save to the correct folder with the exact filename shown</li>
+            <li>Refresh your website to see the new images</li>
+        </ol>
+    </div>
+
+    <script>
+        const dishes = [
+            // Starters
+            { name: 'Bruschetta', folder: 'starters', file: 'bruschetta.jpg', color: 'F5E6D3', text: 'Bruschetta' },
+            { name: 'Calamari Fritti', folder: 'starters', file: 'calamari.jpg', color: 'F5E6D3', text: 'Calamari' },
+            { name: 'Stuffed Mushrooms', folder: 'starters', file: 'stuffed-mushrooms.jpg', color: 'F5E6D3', text: 'Mushrooms' },
+            { name: 'Garlic Bread', folder: 'starters', file: 'garlic-bread.jpg', color: 'F5E6D3', text: 'Garlic Bread' },
+            
+            // Main Course
+            { name: 'Grilled Salmon', folder: 'main-course', file: 'grilled-salmon.jpg', color: 'E8D5B7', text: 'Salmon' },
+            { name: 'Ribeye Steak', folder: 'main-course', file: 'ribeye-steak.jpg', color: 'E8D5B7', text: 'Steak' },
+            { name: 'Chicken Alfredo', folder: 'main-course', file: 'chicken-alfredo.jpg', color: 'E8D5B7', text: 'Chicken' },
+            { name: 'Vegetable Risotto', folder: 'main-course', file: 'vegetable-risotto.jpg', color: 'E8D5B7', text: 'Risotto' },
+            
+            // Desserts
+            { name: 'Tiramisu', folder: 'desserts', file: 'tiramisu.jpg', color: 'F5D6D6', text: 'Tiramisu' },
+            { name: 'Chocolate Lava Cake', folder: 'desserts', file: 'chocolate-lava.jpg', color: 'F5D6D6', text: 'Lava Cake' },
+            { name: 'Crème Brûlée', folder: 'desserts', file: 'creme-brulee.jpg', color: 'F5D6D6', text: 'Brûlée' },
+            { name: 'Panna Cotta', folder: 'desserts', file: 'panna-cotta.jpg', color: 'F5D6D6', text: 'Panna Cotta' },
+            
+            // Drinks
+            { name: 'Fresh Lemonade', folder: 'drinks', file: 'lemonade.jpg', color: 'D6E8D6', text: 'Lemonade' },
+            { name: 'Espresso Martini', folder: 'drinks', file: 'espresso-martini.jpg', color: 'D6E8D6', text: 'Martini' },
+            { name: 'Mocktail Mojito', folder: 'drinks', file: 'mocktail-mojito.jpg', color: 'D6E8D6', text: 'Mojito' },
+            { name: 'Wine Selection', folder: 'drinks', file: 'wine-selection.jpg', color: 'D6E8D6', text: 'Wine' }
+        ];
+
+        const grid = document.getElementById('imageGrid');
+        
+        // Group by category
+        const categories = {};
+        dishes.forEach(d => {
+            if (!categories[d.folder]) categories[d.folder] = [];
+            categories[d.folder].push(d);
+        });
+
+        // Display images by category
+        Object.keys(categories).forEach(category => {
+            // Category title
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'category-title';
+            titleDiv.textContent = category.toUpperCase().replace('-', ' ');
+            grid.appendChild(titleDiv);
+
+            // Category images
+            categories[category].forEach(dish => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const imgUrl = `https://via.placeholder.com/300x200/${dish.color}/C0392B?text=${encodeURIComponent(dish.text)}`;
+                card.innerHTML = `
+                    <img src="${imgUrl}" alt="${dish.name}" />
+                    <div class="name">${dish.name}</div>
+                    <div class="path">📁 ${dish.folder}/</div>
+                    <div class="path">📄 ${dish.file}</div>
+                    <div style="margin-top: 10px;">
+                        <button onclick="downloadImage('${imgUrl}', '${dish.folder}', '${dish.file}')" 
+                                style="background: #C0392B; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                            💾 Download
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+
+        // Download function (opens in new tab)
+        window.downloadImage = function(url, folder, filename) {
+            window.open(url, '_blank');
+            alert(`📸 Image opened in new tab.\n\nSave it to: public/images/${folder}/${filename}\n\n📁 Make sure the folder exists!`);
+        };
+
+        // Add folder creation instructions
+        console.log('📁 Create these folders in public/images/');
+        console.log(Object.keys(categories).join(', '));
+    </script>
+</body>
+</html>

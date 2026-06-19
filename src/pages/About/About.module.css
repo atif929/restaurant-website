@@ -1,0 +1,523 @@
+.about {
+  padding-top: 80px;
+}
+
+/* Page Header */
+.pageHeader {
+  background: linear-gradient(135deg, #FFF8F0 0%, #fce4d6 100%);
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHeader::before {
+  content: '👨‍🍳';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.05;
+  right: -100px;
+  top: -100px;
+  transform: rotate(10deg);
+}
+
+.pageHeader::after {
+  content: '🍷';
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.05;
+  left: -50px;
+  bottom: -50px;
+  transform: rotate(-10deg);
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pageTitle span {
+  color: var(--primary);
+}
+
+.pageDescription {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 2rem;
+}
+
+.sectionTitle span {
+  color: var(--primary);
+}
+
+.sectionTitle.centered {
+  text-align: center;
+}
+
+/* Story Section */
+.storySection {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.storyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storyText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.storyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), #e74c3c);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+}
+
+.badgeIcon {
+  font-size: 1.2rem;
+}
+
+.storyImage {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 2rem;
+}
+
+.overlayText {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Mission Section */
+.missionSection {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #FFF8F0 0%, #fce4d6 100%);
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.missionCard {
+  background-color: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.missionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.missionIcon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(192, 57, 43, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.missionCard:hover .missionIcon {
+  background-color: var(--primary);
+  color: #fff;
+  transform: scale(1.1) rotate(10deg);
+}
+
+.missionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+}
+
+.missionText {
+  color: #666;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Chef Section */
+.chefSection {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.chefGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.chefImageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.chefImageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chefBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.chefBadge svg {
+  font-size: 0.9rem;
+}
+
+.chefContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chefName {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dark-text);
+}
+
+.chefTitle {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.chefBio {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.chefAchievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  transition: all 0.3s ease;
+}
+
+.achievement:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.achievementIcon {
+  font-size: 1.2rem;
+}
+
+/* Statistics Section */
+.statsSection {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary), #e74c3c);
+  position: relative;
+  overflow: hidden;
+}
+
+.statsSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.statsSection .sectionTitle {
+  color: #fff;
+}
+
+.statsSection .sectionTitle span {
+  color: var(--secondary);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.statCard {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .chefGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .chefImageWrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .missionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pageTitle {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 3rem 0;
+  }
+
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+
+  .pageDescription {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .storySection,
+  .missionSection,
+  .chefSection,
+  .statsSection {
+    padding: 3rem 0;
+  }
+
+  .storyGrid {
+    gap: 1.5rem;
+  }
+
+  .storyText {
+    font-size: 0.95rem;
+  }
+
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .missionCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .missionIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  .chefName {
+    font-size: 1.8rem;
+  }
+
+  .chefAchievements {
+    flex-direction: column;
+  }
+
+  .achievement {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2.8rem;
+  }
+
+  .statCard {
+    padding: 1.5rem;
+  }
+
+  .statIcon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .statNumber {
+    font-size: 2.2rem;
+  }
+
+  .statLabel {
+    font-size: 0.85rem;
+  }
+
+  .statIcon {
+    font-size: 1.6rem;
+  }
+
+  .chefImageWrapper {
+    max-width: 300px;
+  }
+
+  .chefBadge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
