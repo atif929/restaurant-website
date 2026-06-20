@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { 
+  FaFacebook, 
+  FaInstagram, 
+  FaTwitter, 
+  FaYoutube, 
+  FaMapMarkerAlt, 
+  FaPhone, 
+  FaEnvelope, 
+  FaClock 
+} from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 function Footer() {
