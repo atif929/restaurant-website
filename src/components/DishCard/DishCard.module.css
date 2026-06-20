@@ -186,6 +186,7 @@
   .description {
     font-size: 0.65rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
   
   .overlay {
